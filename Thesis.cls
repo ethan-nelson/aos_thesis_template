@@ -122,6 +122,7 @@
 \newcommand{\eref}[1]{Equation~\ref{#1}}
 \newcommand{\cref}[1]{Chapter~\ref{#1}}
 \newcommand{\sref}[1]{Section~\ref{#1}}
+\newcommand{\ssref}[1]{Subsection~\ref{#1}}
 \newcommand{\aref}[1]{Appendix~\ref{#1}}
 \renewcommand{\topfraction}{0.85}
 \renewcommand{\bottomfraction}{.85}
@@ -171,13 +172,9 @@
 \newcommand*{\committeeroletwo}[1]{\def\committeeroletwo{#1}}
 \newcommand*{\committeerolethree}[1]{\def\committeerolethree{#1}}
 \newcommand*{\university}[1]{\def\univname{#1}}
-\newcommand*{\UNIVERSITY}[1]{\def\UNIVNAME{#1}}
 \newcommand*{\department}[1]{\def\deptname{#1}}
-\newcommand*{\DEPARTMENT}[1]{\def\DEPTNAME{#1}}
 \newcommand*{\group}[1]{\def\groupname{#1}}
-\newcommand*{\GROUP}[1]{\def\GROUPNAME{#1}}
 \newcommand*{\faculty}[1]{\def\facname{#1}}
-\newcommand*{\FACULTY}[1]{\def\FACNAME{#1}}
 \newcommand*{\subject}[1]{\def\subjectname{#1}}
 \newcommand*{\keywords}[1]{\def\keywordnames{#1}}
 \newcommand*{\graduationmonth}[1]{\def\graduationmonth{#1}}
@@ -194,6 +191,7 @@
 \thesistitle{On the Importance of an Atmosphere} % Your thesis title - this is used in the title and abstract
 %-------------------------------------------------   
 \degree{Master of Science} % Your degree name - this is currently used in the title page and abstract
+\subject{Atmospheric and Oceanic Sciences}
 %-------------------------------------------------   
 \authors{Buckingham U. \textsc{Badger}} % Your name - this is used in the title page and abstract
 %--
@@ -203,19 +201,18 @@
 \committeeroletwo{Faculty Member}
 \committeenamethree{Dr. Louis W. \textsc{Uccellini}} % Yet another faculty member
 \committeerolethree{Faculty Member}
-%
-%-------------------------------------------------   
+
 \university{\texorpdfstring{\href{http://www.wisc.edu} % Your university's URL
                 {University of Wisconsin-Madison}} % Your university's name - this is currently used in the title page
                 {University of Wisconsin-Madison}}
-%-------------------------------------------------   
-\UNIVERSITY{\texorpdfstring{\href{http://www.wisc.edu} % Your university's URL
-                {UNIVERSITY OF WISCONSIN-MADISON}} % Your university's name in capitals - this is currently used in the abstract page
-                {UNIVERSITY OF WISCONSIN-MADISON}}
-%----------------------------------------------------------------------------------------    
+
 \graduationmonth{December}
 \graduationyear{2014}
 %----------------------------------------------------------------------------------------    
+
+
+
+
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE DESIGN
