@@ -1,0 +1,11 @@
+before_install:
+- sudo apt-get update -qq
+- sudo apt-get install texlive-latex-base texlive-latex-extra
+
+script:
+- pdflatex Thesis
+- pdflatex Thesis
+- bibtex Thesis
+- bibtex Thesis
+- pdflatex Thesis
+- pdflatex Thesis

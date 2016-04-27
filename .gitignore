@@ -1,0 +1,8 @@
+*.aux
+*.bbl
+*.blg
+.DS_Store
+*.lo[fgt]
+*.out
+*.synctex.gz
+*.toc
