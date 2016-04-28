@@ -1,9 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % AOS Masters Thesis 
 % LaTeX Template
-% Version 0.1 (04/08/16)
-%
-% A derivation of the thesis template from www.latextemplates.com.
+% Version 0.2 (04/28/16)
 %
 % AOS customization:
 % Ethan Nelson
@@ -15,6 +13,7 @@
 % and
 % Sunil Patel
 % http://www.sunilpatel.co.uk/thesis-template/
+% Later customization by www.latextemplates.com.
 %
 % License:
 % CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
@@ -206,7 +205,7 @@ Acknowledgement is also made to the Department of Research for support under gra
 \clearpage % Start a new page
 
 %----------------------------------------------------------------------------------------
-%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES -- DON'T MODIFY
 %----------------------------------------------------------------------------------------
 
 \pagestyle{fancy} % The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
@@ -221,6 +220,7 @@ Acknowledgement is also made to the Department of Research for support under gra
 \lhead{\emph{List of Tables}} % Set the left side page header to "List of Tables"
 \listoftables % Write out the List of Tables
 \endgroup
+
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
 %----------------------------------------------------------------------------------------
@@ -282,38 +282,44 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 \setstretch{2.0}
 \pagestyle{fancy} % Return the page headers back to the "fancy" style
 
-% Include the chapters of the thesis as separate files from the Chapters folder
-% Uncomment the lines as you write the chapters
-
-\input{Chapters/Chapter1}
-%\input{Chapters/Chapter2} 
-%\input{Chapters/Chapter3}
-%\input{Chapters/Chapter4} 
-%\input{Chapters/Chapter5} 
-%\input{Chapters/Chapter6} 
+\IfFileExists{./Chapters/Chapter1.tex}{\input{Chapters/Chapter1}}{}
+\IfFileExists{./Chapters/Chapter2.tex}{\input{Chapters/Chapter2}}{}
+\IfFileExists{./Chapters/Chapter3.tex}{\input{Chapters/Chapter3}}{}
+\IfFileExists{./Chapters/Chapter4.tex}{\input{Chapters/Chapter4}}{}
+\IfFileExists{./Chapters/Chapter5.tex}{\input{Chapters/Chapter5}}{}
+\IfFileExists{./Chapters/Chapter6.tex}{\input{Chapters/Chapter6}}{}
+\IfFileExists{./Chapters/Chapter7.tex}{\input{Chapters/Chapter7}}{}
+\IfFileExists{./Chapters/Chapter8.tex}{\input{Chapters/Chapter8}}{}
+\IfFileExists{./Chapters/Chapter9.tex}{\input{Chapters/Chapter9}}{}
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
 %----------------------------------------------------------------------------------------
+\IfFileExists{./Appendices/AppendixA.tex}{
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 
 \appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
 
-% Include the appendices of the thesis as separate files from the Appendices folder
-% Uncomment the lines as you write the Appendices
-
-\input{Appendices/AppendixA}
-%\input{Appendices/AppendixB}
-%\input{Appendices/AppendixC}
+\IfFileExists{./Appendices/AppendixA.tex}{\input{Appendices/AppendixA}}{}
+\IfFileExists{./Appendices/AppendixB.tex}{\input{Appendices/AppendixB}}{}
+\IfFileExists{./Appendices/AppendixC.tex}{\input{Appendices/AppendixC}}{}
+\IfFileExists{./Appendices/AppendixD.tex}{\input{Appendices/AppendixD}}{}
+\IfFileExists{./Appendices/AppendixE.tex}{\input{Appendices/AppendixE}}{}
+\IfFileExists{./Appendices/AppendixF.tex}{\input{Appendices/AppendixF}}{}
+\IfFileExists{./Appendices/AppendixG.tex}{\input{Appendices/AppendixG}}{}
+\IfFileExists{./Appendices/AppendixH.tex}{\input{Appendices/AppendixH}}{}
+\IfFileExists{./Appendices/AppendixI.tex}{\input{Appendices/AppendixI}}{}
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 
 \backmatter
 
+}{}
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
+\IfFileExists{Thesis.bib}{
 
 \label{References}
 
@@ -321,6 +327,10 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 \bibliographystyle{ametsoc} % Use the "unsrtnat" BibTeX style for formatting the Bibliography
 
-\bibliography{Bibliography} % The references (bibliography) information are stored in the file named "Bibliography.bib"
+\bibliography{Thesis} % The references (bibliography) information are stored in the file named "Bibliography.bib"
 
+}{}
+%----------------------------------------------------------------------------------------
+%
+%----------------------------------------------------------------------------------------
 \end{document}  
