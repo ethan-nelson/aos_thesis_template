@@ -44,6 +44,7 @@ pdflatex Thesis
 
 If you're curious about why you have to run `pdflatex` so many times, check out [this TeX StackExchange answer](https://tex.stackexchange.com/a/53236/74626).
 
+Alternatively, if you use a TeX program such as TeXShop, open `Thesis.tex` and run the aforementioned commands on that file.
 
 Customizations
 --------------
