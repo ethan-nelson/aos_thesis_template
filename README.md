@@ -63,10 +63,29 @@ Finally, if you want to change the formatting of the bibliography, alter the `\b
 Variables
 ---------
 
-
-
+* `\thesistitle{}`: The title of your thesis.
+* `\degree{}`: The degree level (e.g. Master of Science).
+* `\subject{}`: Department (Atmospheric and Oceanic Sciences).
+* `\authors{}`: Your name (plural to differentiate from LaTeX's author comamnd).
+* `\committeenameone{}`: The first committee member or reader name (usually your advisor).
+* `\committeeroleone{}`: The role of the first member (usually Committee Chair or Faculty Advisor).
+* `\committeenametwo{}`: The second committee member or reader name.
+* `\committeeroletwo{}`: The role of the second member (usually Faculty Member).
+* `\committeenamethree{}`: The third committee member or reader name.
+* `\committeerolethree{}`: The role of the third member (usually Faculty Member).
+* `\university{}`: The name of the university (University of Wisconsin--Madison).
+* `\graduationmonth{}`: The month of the official graduation in the semester you are finishing (May, August, or December).
+* `\graduationyear{}`: The year of the official graduation.
 
 Commands
 --------
+
+* `\fref{fig:N}`: Adds text "Figure N" and creates a clickable reference to that figure. The figure must have `\label{fig:N}`.
+* `\tref{tab:N}`: Adds text "Table N" and creates a clickable reference to that table. The table must have `\label{tab:N}`.
+* `\eref{eqn:N}`: Adds text "Equation N" and creates a clickable reference to that equation. The equation must have `\label{eqn:N}`.
+* `\cref{chp:N}`: Adds text "Chapter N" and creates a clickable reference to that chapter. The chapter must have `\label{chp:N}`.
+* `\sref{sec:N}`: Adds text "Section N" and creates a clickable reference to that section. The section must have `\label{sec:N}`.
+* `\ssref{ssec:N}`: Adds text "Subsection N" and creates a clickable reference to that subsection. The subsection must have `\label{ssec:N}`.
+* `\aref{app:N}`: Adds text "Appendix N" and creates a clickable reference to that appendix. The appendix must have `\label{app:N}`.
 
 
