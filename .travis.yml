@@ -4,8 +4,6 @@ before_install:
 
 script:
 - pdflatex Thesis
-- pdflatex Thesis
-- bibtex Thesis
 - bibtex Thesis
 - pdflatex Thesis
 - pdflatex Thesis
