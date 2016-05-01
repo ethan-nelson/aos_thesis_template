@@ -1,6 +1,8 @@
 AOS Thesis Template
 ===================
 
+[![Build Status](https://travis-ci.org/ethan-nelson/aos_thesis_template.svg?branch=master)](https://travis-ci.org/ethan-nelson/aos_thesis_template)
+
 This repository contains an unofficial Department of Atmospheric and Oceanic Sciences template for theses in LaTeX. Both the base LaTeX and extra installations are required as this template relies on many packages. Additionally, students have had success using the template out of the box on [ShareLaTeX](https://www.sharelatex.com) (thanks Marian!).
 
 The directory structure is as follows (sorted by importance):
