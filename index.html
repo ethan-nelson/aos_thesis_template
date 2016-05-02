@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>AOS thesis template by ethan-nelson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">AOS thesis template</h1>
+      <h2 class="project-tagline">An unofficial AOS departmental LaTeX thesis template</h2>
+      <a href="https://github.com/ethan-nelson/aos_thesis_template" class="btn">View on GitHub</a>
+      <a href="https://github.com/ethan-nelson/aos_thesis_template/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ethan-nelson/aos_thesis_template/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="aos-thesis-template" class="anchor" href="#aos-thesis-template" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AOS Thesis Template</h1>
+
+<p><a href="https://travis-ci.org/ethan-nelson/aos_thesis_template"><img src="https://travis-ci.org/ethan-nelson/aos_thesis_template.svg?branch=master" alt="Build Status"></a></p>
+
+<p>This repository contains an unofficial Department of Atmospheric and Oceanic Sciences template for theses in LaTeX. Both the base LaTeX and extra installations are required as this template relies on many packages. Additionally, students have had success using the template out of the box on <a href="https://www.sharelatex.com">ShareLaTeX</a> (thanks Marian!).</p>
+
+<p>The directory structure is as follows (sorted by importance):</p>
+
+<pre><code>aos_thesis_template
+|   Thesis.tex         the main file to run LaTeX on that also includes the thesis front matter (e.g. abstract)
+|   Config.tex         contains global variables, like your name, to populate the thesis
+|   Bibilography.bib   bibtex file containing references
+|   Thesis.pdf         a sample compiled file (or eventually your thesis)
+|   Thesis.cls         contains some styling features
+|   README.md          what you are reading
+|   ametsoc.bst        American Meteorological Society bibliography styling
+|   .gitignore         extensions that are ignored if using git
+|   .travis.yml        configuration file for Travis-CI
+|
+∟--Chapter/
+|   |   Chapter1.tex           a sample chapter file example
+|   |   ChapterTemplate.tex    a chapter template to copy
+|
+∟--Appendice/
+|   |   AppendixA.tex          a sample appendix file example
+|   |   AppendixTemplate.tex   an appendix template to copy
+|
+∟--Figure/
+|   |   atrain.jpeg            a sample figure file
+|
+</code></pre>
+
+<h2>
+<a id="how-to-compile" class="anchor" href="#how-to-compile" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to Compile</h2>
+
+<p>The easiest way to completely compile the document from scratch is to run this command sequence from the <code>aos_thesis_template</code> folder:</p>
+
+<pre><code>pdflatex Thesis
+bibtex Thesis
+pdflatex Thesis
+pdflatex Thesis
+</code></pre>
+
+<p>If you're curious about why you have to run <code>pdflatex</code> so many times, check out <a href="https://tex.stackexchange.com/a/53236/74626">this TeX StackExchange answer</a>.</p>
+
+<p>Alternatively, if you use a TeX program such as TeXShop, open <code>Thesis.tex</code> and run the aforementioned commands on that file.</p>
+
+<h2>
+<a id="customizations" class="anchor" href="#customizations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Customizations</h2>
+
+<ul>
+<li><p><code>Config.tex</code>: First, basic information must be added to this file. Such information includes the author name, committee members and their roles, and the graduation month and year.</p></li>
+<li><p><code>Thesis.tex</code>: The front matter of the thesis (information between the signature page and the table of contents) is written in this file. Though all of the pages are defined, they may be unnecessary for your thesis (e.g. physical constants). If that is the case, you may comment out everything in that block. Beyond the front matter, this file is also where you must specify the chapter and appendix files to compile into your thesis. If you have less than 10 chapters and 10 appendices, no further modifications to this file are necessary.
+Finally, if you want to change the formatting of the bibliography, alter the <code>\bibliographystyle</code> command near the end of the file.</p></li>
+<li><p><code>Chapters/ChapterN.tex</code>: These files are where you will place most of your thesis constant! Information about the chapter--title, short title, and number--are specified at the top of each chapter file. To add another chapter, you can copy either the <code>Chapter1.tex</code> or <code>ChapterTemplate.tex</code> files. Treat matter in these files like a regular LaTeX file: <code>\figure</code>, <code>\itemize</code>, and other commands can be used as normal. See below for further information about commands you can use to write out a hyperlinked "Chapter X".</p></li>
+<li><p><code>Appendices/AppendixX.tex</code>: These files are for appended material that should be separated from the main text. Appendices appear after the chapter text but before the bibliography. To add another appendix, you can copy either the <code>AppendixA.tex</code> or <code>AppendixTemplate.tex</code> files. Again, these files act just like regular LaTeX files. If you do not want any appendices to show up, simply delete the supplied <code>AppendixA.tex</code> file and that section will be ignored during compilation (you can retaim the template file).</p></li>
+<li><p><code>Thesis.cls</code>: If you must modify margins or autopopulated pages, you can do so here.</p></li>
+</ul>
+
+<h2>
+<a id="variables" class="anchor" href="#variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Variables</h2>
+
+<ul>
+<li>
+<code>\thesistitle{}</code>: The title of your thesis.</li>
+<li>
+<code>\degree{}</code>: The degree level (e.g. Master of Science).</li>
+<li>
+<code>\subject{}</code>: Department (Atmospheric and Oceanic Sciences).</li>
+<li>
+<code>\authors{}</code>: Your name (plural to differentiate from LaTeX's author comamnd).</li>
+<li>
+<code>\committeenameone{}</code>: The first committee member or reader name (usually your advisor).</li>
+<li>
+<code>\committeeroleone{}</code>: The role of the first member (usually Committee Chair or Faculty Advisor).</li>
+<li>
+<code>\committeenametwo{}</code>: The second committee member or reader name.</li>
+<li>
+<code>\committeeroletwo{}</code>: The role of the second member (usually Faculty Member).</li>
+<li>
+<code>\committeenamethree{}</code>: The third committee member or reader name.</li>
+<li>
+<code>\committeerolethree{}</code>: The role of the third member (usually Faculty Member).</li>
+<li>
+<code>\university{}</code>: The name of the university (University of Wisconsin--Madison).</li>
+<li>
+<code>\graduationmonth{}</code>: The month of the official graduation in the semester you are finishing (May, August, or December).</li>
+<li>
+<code>\graduationyear{}</code>: The year of the official graduation.</li>
+</ul>
+
+<h2>
+<a id="commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+
+<ul>
+<li>
+<code>\fref{fig:N}</code>: Adds text "Figure N" and creates a clickable reference to that figure. The figure must have <code>\label{fig:N}</code>.</li>
+<li>
+<code>\tref{tab:N}</code>: Adds text "Table N" and creates a clickable reference to that table. The table must have <code>\label{tab:N}</code>.</li>
+<li>
+<code>\eref{eqn:N}</code>: Adds text "Equation N" and creates a clickable reference to that equation. The equation must have <code>\label{eqn:N}</code>.</li>
+<li>
+<code>\cref{chp:N}</code>: Adds text "Chapter N" and creates a clickable reference to that chapter. The chapter must have <code>\label{chp:N}</code>.</li>
+<li>
+<code>\sref{sec:N}</code>: Adds text "Section N" and creates a clickable reference to that section. The section must have <code>\label{sec:N}</code>.</li>
+<li>
+<code>\ssref{ssec:N}</code>: Adds text "Subsection N" and creates a clickable reference to that subsection. The subsection must have <code>\label{ssec:N}</code>.</li>
+<li>
+<code>\aref{app:N}</code>: Adds text "Appendix N" and creates a clickable reference to that appendix. The appendix must have <code>\label{app:N}</code>.</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ethan-nelson/aos_thesis_template">AOS thesis template</a> is maintained by <a href="https://github.com/ethan-nelson">ethan-nelson</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
