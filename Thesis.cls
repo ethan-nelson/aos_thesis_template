@@ -181,38 +181,12 @@
 \newcommand*{\graduationyear}[1]{\def\graduationyear{#1}}
 \setpapersize{USletter}
 %----------------------------------------------------------------------------------------
-%	DOCUMENT VARIABLES
-%	Fill in the lines below to update the thesis template
-%	If you wish to cite each of the variables defined below, look at the
-%	section above for the citation command e.g. \examiner{} below is
-%	defined as \examname above so you cite it as \examname
+%	STATIC DOCUMENT VARIABLES
 %----------------------------------------------------------------------------------------
-
-\thesistitle{On the Importance of an Atmosphere} % Your thesis title - this is used in the title and abstract
-%-------------------------------------------------   
-\degree{Master of Science} % Your degree name - this is currently used in the title page and abstract
 \subject{Atmospheric and Oceanic Sciences}
-%-------------------------------------------------   
-\authors{Buckingham U. \textsc{Badger}} % Your name - this is used in the title page and abstract
-%--
-\committeenameone{Dr. Verner E. \textsc{Suomi}} % Your committee chair
-\committeeroleone{Committee Chair}
-\committeenametwo{Dr. Reid A. \textsc{Bryson}} % Another faculty member
-\committeeroletwo{Faculty Member}
-\committeenamethree{Dr. Louis W. \textsc{Uccellini}} % Yet another faculty member
-\committeerolethree{Faculty Member}
-
-\university{\texorpdfstring{\href{http://www.wisc.edu} % Your university's URL
-                {University of Wisconsin-Madison}} % Your university's name - this is currently used in the title page
+\university{\texorpdfstring{\href{http://www.wisc.edu}
                 {University of Wisconsin-Madison}}
-
-\graduationmonth{December}
-\graduationyear{2014}
-%----------------------------------------------------------------------------------------    
-
-
-
-
+                {University of Wisconsin-Madison}}
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE DESIGN
