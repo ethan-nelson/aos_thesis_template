@@ -45,28 +45,14 @@
 \LoadClass{\baseclass}
 \newcommand\bhrule{\typeout{------------------------------------------------------------------------------}}
 
-\newcommand\Declaration[1]{
-\btypeout{Declaration of Authorship}
-%\addtotoc{Declaration of Authorship}
-\thispagestyle{empty}
-\null\vfil
-%\vskip 60\p@
-\begin{center}{\huge\bf Thesis Declaration and Approval\par}\end{center}
-%\vskip 60\p@
-{\normalsize #1}
-\vfil\vfil\null
-%\cleardoublepage
-}
+\newcommand{\sigline}[3]{\leavevmode\vtop{\vbox{\hbox{\text{#2}}\smallskip}\hrule width #1\smallskip\hbox{#3}}}
 
 \newcommand\btypeout[1]{\bhrule\typeout{\space #1}\bhrule}
-\def\today{\ifcase\month\or
-  January\or February\or March\or April\or May\or June\or
-  July\or August\or September\or October\or November\or December\fi
-  \space \number\year}
 \usepackage{setspace}
 \onehalfspacing
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{3.0ex plus0.5ex minus0.2ex}
+
 \usepackage{vmargin}
 
 \RequirePackage[utf8]{inputenc} % Allows the use of international characters (e.g. Umlauts)
@@ -74,14 +60,14 @@
 %----------------------------------------------------------------------------------------
 %	MARGINS
 %----------------------------------------------------------------------------------------
-\setmarginsrb  { 1.25in}  % left margin
-                        { 1.125in}  % top margin
-                        { 1.0in}  % right margin
-                        { 1.3in}  % bottom margin
-                        { 0.25 in}  % head height
-                        {0.2in}  % head sep
+\setmarginsrb  { 1.25 in}  % left margin
+                        { 0.95 in}  % top margin
+                        { 0.75 in}  % right margin
+                        { 1.45 in}  % bottom margin
+                        { 0.05 in}  % head height
+                        { 0.15 in}  % head sep
                         {  0}  % foot height
-                        { 0.3in}  % foot sep
+                        { 0.3 in}  % foot sep
 %----------------------------------------------------------------------------------------
 \raggedbottom
 \setlength{\topskip}{1\topskip \@plus 5\p@}
@@ -90,19 +76,25 @@
 \widowpenalty=9999                % Almost no widows at bottom of page.
 \clubpenalty=9999                 % Almost no orphans at top of page.
 \interfootnotelinepenalty=9999    % Almost never break footnotes.
+
 \usepackage{fancyhdr}
+
 \lhead[\rm\thepage]{\fancyplain{}{\sl{\rightmark}}}
 \rhead[\fancyplain{}{\sl{\leftmark}}]{\rm\thepage}
+
 \chead{}\lfoot{}\rfoot{}\cfoot{}
+
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\btypeout{\thechapter\space #1}\markboth{\@chapapp\ \thechapter\ #1}{\@chapapp\ \thechapter\ #1}}
 \renewcommand{\sectionmark}[1]{}
 \renewcommand{\subsectionmark}[1]{}
+
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
 \hbox{}
 \thispagestyle{empty}
 \newpage
 \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+
 \usepackage{amsmath,amsfonts,amssymb,amscd,amsthm,xspace}
 \theoremstyle{plain}
 \newtheorem{example}{Example}[chapter]
@@ -115,8 +107,10 @@
 \newtheorem{definition}[theorem]{Definition}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
+
 \usepackage[centerlast,small,sc]{caption}
 \setlength{\captionmargin}{20pt}
+
 \newcommand{\fref}[1]{Figure~\ref{#1}}
 \newcommand{\tref}[1]{Table~\ref{#1}}
 \newcommand{\eref}[1]{Equation~\ref{#1}}
@@ -130,10 +124,12 @@
 \renewcommand{\dbltopfraction}{.85}
 \renewcommand{\floatpagefraction}{0.75}
 \renewcommand{\dblfloatpagefraction}{.75}
+
 \setcounter{topnumber}{9}
 \setcounter{bottomnumber}{9}
 \setcounter{totalnumber}{20}
 \setcounter{dbltopnumber}{9}
+
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage[scriptsize]{subfigure}
@@ -161,13 +157,17 @@
 \pdfstringdefDisableCommands{
    \let\\\space
 }
+
 \newcommand*{\supervisor}[1]{\def\supname{#1}}
 \newcommand*{\thesistitle}[1]{\def\ttitle{#1}}
+\newcommand*{\manuscripttype}[1]{\def\manuscripttype{#1}}
 \newcommand*{\degree}[1]{\def\degreename{#1}}
 \newcommand*{\authors}[1]{\def\authornames{#1}}
 \newcommand*{\committeenameone}[1]{\def\committeenameone{#1}}
 \newcommand*{\committeenametwo}[1]{\def\committeenametwo{#1}}
 \newcommand*{\committeenamethree}[1]{\def\committeenamethree{#1}}
+\newcommand*{\committeenamefour}[1]{\def\committeenamefour{#1}}
+\newcommand*{\committeenamefive}[1]{\def\committeenamefive{#1}}
 \newcommand*{\committeeroleone}[1]{\def\committeeroleone{#1}}
 \newcommand*{\committeeroletwo}[1]{\def\committeeroletwo{#1}}
 \newcommand*{\committeerolethree}[1]{\def\committeerolethree{#1}}
@@ -179,6 +179,7 @@
 \newcommand*{\keywords}[1]{\def\keywordnames{#1}}
 \newcommand*{\graduationmonth}[1]{\def\graduationmonth{#1}}
 \newcommand*{\graduationyear}[1]{\def\graduationyear{#1}}
+
 \setpapersize{USletter}
 %----------------------------------------------------------------------------------------
 %	STATIC DOCUMENT VARIABLES
@@ -195,11 +196,10 @@
 {
   \btypeout{Abstract Page}
   \thispagestyle{plain}
-  \null\vfil
   \begin{center}
     \setlength{\parskip}{0pt}
 
-    {\Large{\textit{Abstract}} \par}
+    {\Large{\textbf{Abstract}} \par}
 
     {\normalsize\bf \@title \par} % Thesis title
 
@@ -218,6 +218,29 @@
 \newcommand\addtotoc[1]{
 \refstepcounter{dummy}
 \addcontentsline{toc}{chapter}{#1}}
+
+
+\newcommand\Declaration[1]{
+\btypeout{Declaration of Authorship}
+\thispagestyle{empty}
+\begin{center}{\huge\bf \manuscripttype \ Declaration and Approval\par}\end{center}
+\vfil\vfil\null
+I, \authornames, declare that this thesis titled `\ttitle' and the work presented in it are my own.
+\vfill
+\sigline{1.8in}{\authornames\phantom{g}}{Author}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
+\vfill
+I hereby approve and recommend for acceptance this work in partial fulfillment of the requirements for the degree of \degreename:
+\vfill
+\sigline{1.8in}{\committeenameone\phantom{g}}{\committeeroleone}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
+\vfill
+\sigline{1.8in}{\committeenametwo\phantom{g}}{\committeeroletwo}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
+\vfill
+\sigline{1.8in}{\committeenamethree\phantom{g}}{\committeerolethree}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
+\vfill
+
+\clearpage
+}
+
 \renewcommand\tableofcontents{
 \btypeout{Table of Contents}
 \addtotoc{Contents}
@@ -236,6 +259,7 @@
    \cleardoublepage
 }\end{spacing}
 }
+
 \renewcommand\listoffigures{
 \btypeout{List of Figures}
 \addtotoc{List of Figures}
@@ -254,6 +278,7 @@
     \cleardoublepage
 }\end{spacing}
 }
+
 \renewcommand\listoftables{
 \btypeout{List of Tables}
 \addtotoc{List of Tables}
@@ -272,6 +297,7 @@
     \cleardoublepage
 }\end{spacing}
 }
+
 \newcommand\listabbreviationname{Abbreviations}
 \usepackage{longtable}
 \newcommand\listofabbreviations[2]{
@@ -283,6 +309,7 @@
 \begin{longtable}[c]{#1}#2\end{longtable}\par
     \cleardoublepage
 }
+
 \newcommand\listconstants{Physical Constants}
 \usepackage{longtable}
 \newcommand\listofconstants[2]{
@@ -294,6 +321,7 @@
 \begin{longtable}[c]{#1}#2\end{longtable}\par
     \cleardoublepage
 }
+
 \newcommand\listnomenclature{Symbols}
 \usepackage{longtable}
 \newcommand\listofnomenclature[2]{
@@ -305,24 +333,39 @@
 \begin{longtable}[c]{#1}#2\end{longtable}\par
     \cleardoublepage
 }
+
 \newcommand\acknowledgements[1]{
 \btypeout{Acknowledgements}
 \addtotoc{Acknowledgements}
 \thispagestyle{plain}
-\begin{center}{\huge{\textit{Acknowledgements}} \par}\end{center}
+\begin{center}{\huge{\textbf{Acknowledgements}} \par}\end{center}
 {\normalsize #1}
 \vfil\vfil\null
-
 }
+
 \newcommand\dedicatory[1]{
 \btypeout{Dedicatory}
+\addtotoc{Dedication}
 \thispagestyle{plain}
+\thispagestyle{empty}
 \null\vfil
 \vskip 60\p@
 \begin{center}{\Large \sl #1}\end{center}
 \vfil\null
 \cleardoublepage
 }
+
+\newcommand\quotable[1]{
+\btypeout{Quotable}
+\thispagestyle{plain}
+\thispagestyle{empty}
+\null\vfil
+\vskip 60\p@
+{#1}
+\vfil\null
+\cleardoublepage
+}
+
 \renewcommand\backmatter{
   \if@openright
     \cleardoublepage
