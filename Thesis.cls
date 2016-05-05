@@ -195,7 +195,6 @@
 \newenvironment{abstract}
 {
   \btypeout{Abstract Page}
-  \thispagestyle{plain}
   \begin{center}
     \setlength{\parskip}{0pt}
 
@@ -337,7 +336,6 @@ I hereby approve and recommend for acceptance this work in partial fulfillment o
 \newcommand\acknowledgements[1]{
 \btypeout{Acknowledgements}
 \addtotoc{Acknowledgements}
-\thispagestyle{plain}
 \begin{center}{\huge{\textbf{Acknowledgements}} \par}\end{center}
 {\normalsize #1}
 \vfil\vfil\null
@@ -346,8 +344,6 @@ I hereby approve and recommend for acceptance this work in partial fulfillment o
 \newcommand\dedicatory[1]{
 \btypeout{Dedicatory}
 \addtotoc{Dedication}
-\thispagestyle{plain}
-\thispagestyle{empty}
 \null\vfil
 \vskip 60\p@
 \begin{center}{\Large \sl #1}\end{center}
@@ -357,8 +353,6 @@ I hereby approve and recommend for acceptance this work in partial fulfillment o
 
 \newcommand\quotable[1]{
 \btypeout{Quotable}
-\thispagestyle{plain}
-\thispagestyle{empty}
 \null\vfil
 \vskip 60\p@
 {#1}
