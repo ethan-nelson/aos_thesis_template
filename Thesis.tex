@@ -95,6 +95,9 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
+\ifnum\pdfstrcmp{\manuscripttype}{Thesis}=0
+
+% Thesis title page
 \begin{titlepage}
 \begin{center}
 
@@ -108,7 +111,7 @@
 \authornames 
 \end{center}
  
-\large A thesis submitted in partial fulfillment of \\ the requirements for the degree of\\[1cm]
+\large A \manuscripttype submitted in partial fulfillment of \\ the requirements for the degree of\\[1cm]
 \degreename \\
 (\subjectname) \\[1cm]
  at the\\
@@ -120,6 +123,47 @@
 \end{center}
 
 \end{titlepage}
+% End thesis title page
+
+\else\ifnum\pdfstrcmp{\manuscripttype}{Dissertation}=0
+
+% Dissertation title page
+\begin{titlepage}
+\begin{center}
+\ \\
+{\ttitle}\\[0.7in]
+By \\
+\authornames \\[0.7in]
+A \MakeLowercase{\manuscripttype}\ submitted in partial fulfillment of \\ the requirements for the degree of\\[0.7in]
+\degreename \\
+(\subjectname) \\[0.7in]
+ at the\\
+\MakeUppercase{\univname}\\
+\graduationyear\\[0.7in]
+\end{center}
+
+Date of final oral examination: \defensedate
+
+\begin{spacing}{1}
+\hangindent=0.5in
+The dissertation is approved by the following members of the Final Oral Committee:\\
+\committeenameone, \committeetitleone, \committeedeptone \\
+\committeenametwo, \committeetitletwo, \committeedepttwo \\
+\committeenamethree, \committeetitlethree, \committeedeptthree \\
+\committeenamefour, \committeetitlefour, \committeedeptfour \\
+\committeenamefive, \committeetitlefive, \committeedeptfive
+\end{spacing}
+
+\end{titlepage}
+% End dissertation title page
+
+\else
+
+\begin{titlepage}
+The \\manuscripttype variable in Thesis.cls is not defined; title page cannot be constructed.
+\end{titlepage}
+
+\fi\fi
 
 %----------------------------------------------------------------------------------------
 %	DECLARATION PAGE - Don't edit

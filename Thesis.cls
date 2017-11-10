@@ -171,6 +171,18 @@
 \newcommand*{\committeeroleone}[1]{\def\committeeroleone{#1}}
 \newcommand*{\committeeroletwo}[1]{\def\committeeroletwo{#1}}
 \newcommand*{\committeerolethree}[1]{\def\committeerolethree{#1}}
+\newcommand*{\committeerolefour}[1]{\def\committeerolefour{#1}}
+\newcommand*{\committeerolefive}[1]{\def\committeerolefive{#1}}
+\newcommand*{\committeetitleone}[1]{\def\committeetitleone{#1}}
+\newcommand*{\committeetitletwo}[1]{\def\committeetitletwo{#1}}
+\newcommand*{\committeetitlethree}[1]{\def\committeetitlethree{#1}}
+\newcommand*{\committeetitlefour}[1]{\def\committeetitlefour{#1}}
+\newcommand*{\committeetitlefive}[1]{\def\committeetitlefive{#1}}
+\newcommand*{\committeedeptone}[1]{\def\committeedeptone{#1}}
+\newcommand*{\committeedepttwo}[1]{\def\committeedepttwo{#1}}
+\newcommand*{\committeedeptthree}[1]{\def\committeedeptthree{#1}}
+\newcommand*{\committeedeptfour}[1]{\def\committeedeptfour{#1}}
+\newcommand*{\committeedeptfive}[1]{\def\committeedeptfive{#1}}
 \newcommand*{\university}[1]{\def\univname{#1}}
 \newcommand*{\department}[1]{\def\deptname{#1}}
 \newcommand*{\group}[1]{\def\groupname{#1}}
@@ -179,6 +191,7 @@
 \newcommand*{\keywords}[1]{\def\keywordnames{#1}}
 \newcommand*{\graduationmonth}[1]{\def\graduationmonth{#1}}
 \newcommand*{\graduationyear}[1]{\def\graduationyear{#1}}
+\newcommand*{\defensedate}[1]{\def\defensedate{#1}}
 
 \setpapersize{USletter}
 %----------------------------------------------------------------------------------------
@@ -224,19 +237,23 @@
 \thispagestyle{empty}
 \begin{center}{\huge\bf \manuscripttype \ Declaration and Approval\par}\end{center}
 \vfil\vfil\null
-I, \authornames, declare that this thesis titled `\ttitle' and the work presented in it are my own.
+I, \authornames, declare that this \manuscripttype \ titled `\ttitle' and the work presented in it are my own.
 \vfill
-\sigline{1.8in}{\authornames\phantom{g}}{Author}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
+\sigline{2in}{\authornames\phantom{g}}{Author}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
 \vfill
 I hereby approve and recommend for acceptance this work in partial fulfillment of the requirements for the degree of \degreename:
 \vfill
-\sigline{1.8in}{\committeenameone\phantom{g}}{\committeeroleone}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
+\sigline{2in}{\committeenameone\phantom{g}}{\committeeroleone}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
 \vfill
-\sigline{1.8in}{\committeenametwo\phantom{g}}{\committeeroletwo}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
+\sigline{2in}{\committeenametwo\phantom{g}}{\committeeroletwo}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
 \vfill
-\sigline{1.8in}{\committeenamethree\phantom{g}}{\committeerolethree}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
+\sigline{2in}{\committeenamethree\phantom{g}}{\committeerolethree}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
 \vfill
-
+\ifnum\pdfstrcmp{\manuscripttype}{Dissertation}=0
+\sigline{2in}{\committeenamefour\phantom{g}}{\committeerolefour}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
+\vfill
+\sigline{2in}{\committeenamefive\phantom{g}}{\committeerolefive}\hfill\sigline{2.5in}{}{Signature}\hfill\sigline{1in}{}{Date}
+\fi
 \clearpage
 }
 
